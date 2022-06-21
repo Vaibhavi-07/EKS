@@ -12,26 +12,3 @@ spec:
   selector:
     app: "react-ui"
   type: "NodePort"
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: "react-ui"
-  labels:
-    app: react-ui
-spec:
-  replicas: 1
-  selector:
-      matchLabels:
-        app: "react-ui"
-  template:
-    metadata:
-      labels:
-        app: react-ui
-    spec:
-      containers:
-        - name: "react-ui"
-          image: "deekshithsn/ui"
-          imagePullPolicy: "IfNotPresent"
-          ports:
-            - containerPort: 8080

@@ -14,14 +14,14 @@ service:
 
 container:
   name: zuul-api-gateway
-
+  
 cpa:
   podAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
     - labelSelector:
-        matchExpressions:
-        - key: app
-          operator: In
-          values:
-          - react-ui
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - react-ui
       topologyKey: "kubernetes.io/hostname"
